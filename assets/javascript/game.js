@@ -15,36 +15,38 @@ var guessArr = [];
 function newLetter() {
     guessesLeft = 9;
     guessArr = [];
+    compChoice = letArr[Math.floor(Math.random()*letArr.length)];
 }
+
+var compChoice = letArr[Math.floor(Math.random()*letArr.length)];
 
 document.onkeyup = function(event) {
     
-   var compChoice = letArr[Math.floor(Math.random()*letArr.length)];
+   
    
    var userGuess = event.key.toLowerCase();
 
-    // console.log(userGuess);
+    console.log(userGuess);
 
-    // console.log(compChoice);
+    console.log(compChoice);
 
     
-
+    
         
-        
-        if (userGuess === compChoice) {
-            newLetter();
-            wins++;
-            
-        } 
-        if (userGuess !== compChoice) {
-            guessesLeft = guessesLeft - 1;
-            guessArr.push(userGuess);
-
-        }
         if (guessesLeft === 0) {
             newLetter();
             losses ++;
+            
+        } else if (userGuess !== compChoice) {
+            guessesLeft = guessesLeft - 1;
+            guessArr.push(userGuess);
+
+        } else if (userGuess === compChoice) {
+            newLetter();
+            wins++;
         }
+
+    
 
     var html =
     "<p>Wins: " + wins + "</p>" +
@@ -54,7 +56,6 @@ document.onkeyup = function(event) {
 
     document.querySelector("#game").innerHTML = html;
 }
-
 
 
 
