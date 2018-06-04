@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: black;
+    color: azure;
+    text-align: center;
+    
+}
+
+header {
+    text-align: center;
+    margin-top: 10px;
+    background: darkslategray;
+    margin: 0 auto;
+}
+
+div {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+img {
+    
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
